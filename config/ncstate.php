@@ -2,7 +2,7 @@
 
 return [
     'unitname' => "Friday Institute for Educational Innovation",
-    'orgurl' => "https://www.fi.ncsu.edu",
+    'uniturl' => "https://www.fi.ncsu.edu",
     'collegename' => "College of Education",
     'collegeurl' => "https://ced.ncsu.edu",
     'unitname_formal_l1' => "William and Ida Friday Institute",
