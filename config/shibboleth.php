@@ -13,7 +13,7 @@ return [
 
     'idp_login' => '/Shibboleth.sso/Login',
     'idp_logout' => '/Shibboleth.sso/Logout',
-    'authenticated' => '/',
+    'authenticated' => '/dashboard',
 
 
     /*
