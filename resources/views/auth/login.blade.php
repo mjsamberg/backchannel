@@ -45,7 +45,7 @@
             </div>
         </form>
         <div class="flex items-center justify-center mt-5">
-            <a class="inline-flex items-center h-12 px-6 m-2 text-lg text-red-100 transition-colors duration-150 bg-red-700 rounded-lg focus:shadow-outline hover:bg-red-800" href="{{ route('shibboleth-login') }}">Unity Login</a>
+            <a class="inline-flex items-center h-12 px-6 m-2 text-lg text-white transition-colors duration-150 bg-red rounded-lg focus:shadow-outline hover:bg-reynolds" href="{{ route('shibboleth-login') }}">Unity Login</a>
         </div> 
     </x-jet-authentication-card>
 </x-guest-layout>
