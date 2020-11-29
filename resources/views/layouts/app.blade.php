@@ -7,11 +7,9 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
         <!-- Styles -->
         <link rel="stylesheet" href="{{ url(mix('css/app.css')) }}">
+        <script src="https://cdn.ncsu.edu/brand-assets/utility-bar/ub.php?googleCustomSearchCode={{config('ncstate.branding_search_id')}}&placeholder={{config('ncstate.branding_search_label')}}&maxWidth=1100&color=gray&showBrick=1"></script>
 
         @livewireStyles
 
@@ -19,7 +17,7 @@
         <script src="{{ url(mix('js/app.js')) }}" defer></script>
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-gray-100 mt-5">
             @livewire('navigation-dropdown')
 
             <!-- Page Heading -->
