@@ -14,11 +14,7 @@ use App\Http\Controllers\RoomsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'App\Http\Controllers\RoomsController@dashboard')->name('dashboard');
-Route::middleware(['auth:sanctum', 'verified'])->post('/room', 'App\Http\Controllers\RoomsController@create')->name('room.create');
+Route::middleware(['auth:sanctum', 'verified'])->post('/room/create', 'App\Http\Controllers\RoomsController@create')->name('room.create');
 Route::get('/{slug}', 'App\Http\Controllers\RoomsController@display_room')->name('room.display');
 Route::post('/room', 'App\Http\Controllers\RoomsController@display_room_form')->name('room.display.post');
