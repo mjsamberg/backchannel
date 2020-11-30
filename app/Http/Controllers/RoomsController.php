@@ -38,4 +38,10 @@ class RoomsController extends Controller
         $room->save();
         return $this->dashboard();
     }
+
+    public function display_room($slug){
+        $room = Room::where('slug', strtolower(strip_tags($slug)))->firstOrFail();
+        
+        return view('room', array('room'=>$room));
+    }
 }

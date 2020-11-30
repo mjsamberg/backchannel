@@ -12,4 +12,8 @@ class Room extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+
+    public function posts(){
+        return $this->hasMany('App\Models\Post');
+    }
 }
