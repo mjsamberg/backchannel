@@ -40,7 +40,7 @@
                                         @endif
                                     </td>
                                     <td class="border border-green">{{ $r->title }}</td>
-                                    <td class="border border-green">{{ $r->slug }}</td>
+                                    <td class="border border-green"><a class="underline text-sm text-red hover:text-reynolds underline hover:no-underline" href="{{ config('app.url') }}/{{ $r->slug }}" target="_blank">{{ $r->slug }}</a></td>
                                     <td class="border border-green">{{ $r->description }}</td>
                                 </tr>
                             @endforeach

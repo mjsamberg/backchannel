@@ -39,7 +39,18 @@ class RoomsController extends Controller
         return $this->dashboard();
     }
 
-    public function display_room($slug){
+    public function display_room_form(Request $request){
+        $data = $request->validate([
+            'slug' => 'required|alpha_num|max:64',
+        ]);
+        return redirect('/'.$data['slug']);
+    }
+
+    public function display_room($slug = ""){
+        if(!isset($slug)||$slug==""){
+            return view('welcome');
+        }
+
         $room = Room::where('slug', strtolower(strip_tags($slug)))->firstOrFail();
         return view('room', array('room'=>$room));
     }
