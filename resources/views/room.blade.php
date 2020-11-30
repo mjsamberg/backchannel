@@ -47,7 +47,6 @@
                 li.appendChild(div_message);
                 li.appendChild(div_byline);
                 document.getElementById("messages").appendChild(li);
-                document.getElementById("message-list").scrollTop = document.getElementById("message-list").scrollHeight;
             });
 
         var callback = function(){
