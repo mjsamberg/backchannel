@@ -14,6 +14,6 @@ class Room extends Model
     }
 
     public function posts(){
-        return $this->hasMany('App\Models\Post');
+        return $this->hasMany('App\Models\Post')->orderBy('posted','DESC');
     }
 }

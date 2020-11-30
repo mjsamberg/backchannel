@@ -41,7 +41,6 @@ class RoomsController extends Controller
 
     public function display_room($slug){
         $room = Room::where('slug', strtolower(strip_tags($slug)))->firstOrFail();
-        
         return view('room', array('room'=>$room));
     }
 }
