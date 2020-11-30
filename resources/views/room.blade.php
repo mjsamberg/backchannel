@@ -13,11 +13,7 @@
             </div>
             <div class="bg-gray-100 overflow-hidden shadow-xl sm:rounded-lg md:ml-3 mt-3 md:mt-0 p-8">
                 <h2>Post a Message</h2>
-                <x-form method="" onSubmit="sendMessage">
-                    <x-form-input name="name" label="Your Name" />
-                    <x-form-textarea name="message" language="en" placeholder="Message" />
-                    <x-form-submit />
-                </x-form>
+                @livewire('message-form', array('room_id'=>$room->id))
             </div>
         </div>
     </div>
