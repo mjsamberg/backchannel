@@ -18,7 +18,7 @@
     </head>
     <body class="font-sans antialiased">
         <div class="title mt-10 max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <h1 class="font-condensed text-center text-4xl font-light">{{ config('app.name', 'Untitled Application') }}</h1>
+            <h1 class="font-condensed text-center text-4xl font-light"><a href="{{ config('app.url')}}">{{ config('app.name', 'Untitled Application') }}</a></h1>
             <h2 class="text-center"><a href="{{ config('ncstate.uniturl') }}" target="_blank" class="font-condensed text-2xl font-light leading-none text-red">{{ config('ncstate.unitname') }}</a></h2>
         </div>
         <hr class="mt-3 border-red border-2"/>
