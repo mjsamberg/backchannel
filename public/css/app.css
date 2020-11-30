@@ -550,7 +550,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /**
@@ -12848,8 +12848,8 @@ h2 {
   font-family: Glypha;
 }
 
-.font-mono{
-  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+.font-condensed{
+  font-family: UniversCondensed, sans-serif;
 }
 
 .font-hairline{
@@ -34774,52 +34774,6 @@ html{
   font-weight: 300;
 }
 
-.title{
-  text-align: center;
-  font-family: UniversCondensed;
-  font-weight: 300
-}
-
-.title h1{
-  font-size: 3rem;
-}
-
-.title h2{
-  font-size: 1.5rem
-}
-
-.title a{
-  color: var(--brand-primary);
-}
-
-footer{
-  background-color: var(--brand-primary);
-  color: white;
-}
-
-footer #orgname{
-  font-family: UniversCondensed;
-  font-size: 1.3rem;
-  font-weight: bold;
-  line-height: 1
-}
-
-footer address{
-  font-style: normal;
-}
-
-footer #college{
-  text-transform: uppercase;
-  font-family: UniversCondensed;
-  font-size: 1.25rem;
-  font-weight: normal;
-}
-
-footer #ncstate{
-  font-family: Univers;
-  font-weight: bold;
-}
-
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;
@@ -46830,8 +46784,8 @@ footer #ncstate{
     font-family: Glypha;
   }
 
-  .sm\:font-mono{
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  .sm\:font-condensed{
+    font-family: UniversCondensed, sans-serif;
   }
 
   .sm\:font-hairline{
@@ -80692,8 +80646,8 @@ footer #ncstate{
     font-family: Glypha;
   }
 
-  .md\:font-mono{
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  .md\:font-condensed{
+    font-family: UniversCondensed, sans-serif;
   }
 
   .md\:font-hairline{
@@ -114554,8 +114508,8 @@ footer #ncstate{
     font-family: Glypha;
   }
 
-  .lg\:font-mono{
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  .lg\:font-condensed{
+    font-family: UniversCondensed, sans-serif;
   }
 
   .lg\:font-hairline{
@@ -148416,8 +148370,8 @@ footer #ncstate{
     font-family: Glypha;
   }
 
-  .xl\:font-mono{
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  .xl\:font-condensed{
+    font-family: UniversCondensed, sans-serif;
   }
 
   .xl\:font-hairline{

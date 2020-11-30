@@ -8,6 +8,11 @@ module.exports = {
     ],
 
     theme: {
+        fontFamily: {
+            sans: ['Univers', ...defaultTheme.fontFamily.sans],
+            serif: ['Glypha'],
+            condensed: ['UniversCondensed', 'sans-serif']
+        },
         colors: {
             black: '#000',
             white: '#fff',
@@ -96,10 +101,6 @@ module.exports = {
             },
         },
         extend: {
-            fontFamily: {
-                sans: ['Univers', ...defaultTheme.fontFamily.sans],
-                serif: ['Glypha']
-            },
 
         },
     },
