@@ -17,4 +17,22 @@
             </div>
         </div>
     </div>
+
+    <x-slot name="scripts">
+        var callback = function(){
+            Echo.channel('room{{ $room->id }}')
+            .listen('MessagePosted', (e) => {
+                console.log(e);
+            });
+        };
+
+        if (
+            document.readyState === "complete" ||
+            (document.readyState !== "loading" && !document.documentElement.doScroll)
+        ) {
+            callback();
+        } else {
+            document.addEventListener("DOMContentLoaded", callback);
+        }
+    </x-slot>
 </x-guest-layout>

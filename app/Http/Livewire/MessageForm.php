@@ -22,6 +22,7 @@ class MessageForm extends Component
         $post->room_id = $this->room_id;
         $post->posted = date('Y-m-d H:i:s');
         $post->save();
+        event(new \App\Events\MessagePosted($post));
         $this->message = "";
 
 
