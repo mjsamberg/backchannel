@@ -87,7 +87,7 @@
         </footer>
 
         @stack('modals')
-        <script language="JavaScript">
+        <script language="JavaScript" type="module">
             {{ $scripts }}
         </script>
         @livewireScripts

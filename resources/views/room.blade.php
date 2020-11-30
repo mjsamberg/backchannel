@@ -23,18 +23,18 @@
     </div>
 
     <x-slot name="scripts">
-        var callback = function(){
-            var element = document.getElementById("message-list");
-            element.scrollTop = element.scrollHeight;
-
-            Echo.channel('room{{ $room->id }}')
+        Echo.channel('room{{ $room->id }}')
             .listen('MessagePosted', (e) => {
                 var li = document.createElement("li");
                 li.appendChild(document.createTextNode(e.message.message+" ("+e.message.name+")"));
                 document.getElementById("messages").appendChild(li);
-                document.getElementById("message-list").scrollTop = element.scrollHeight;
+                document.getElementById("message-list").scrollTop = document.getElementById("message-list").scrollHeight;
                 console.log(e);
             });
+
+        var callback = function(){
+            var element = document.getElementById("message-list");
+            element.scrollTop = element.scrollHeight;  
         };
 
         if (
