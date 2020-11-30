@@ -107,6 +107,7 @@ module.exports = {
 
     variants: {
         opacity: ['responsive', 'hover', 'focus', 'disabled'],
+        backgroundColor: ['responsive', 'even', 'hover', 'focus', 'odd'],
     },
 
     plugins: [require('@tailwindcss/ui', '@tailwindcss/custom-forms')],

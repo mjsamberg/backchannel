@@ -25,6 +25,7 @@ class MessagePosted  implements ShouldBroadcast
         $this->message['name'] = $message->name;
         $this->message['message'] = $message->message;
         $this->message['room_id'] = $message->room_id;
+        $this->message['posted'] = date("m/d/Y g:i a", strtotime($message->posted));
     }
 
     /**
