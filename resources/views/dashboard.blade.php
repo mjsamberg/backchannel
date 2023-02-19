@@ -33,17 +33,17 @@
                             <tbody>
                                 @foreach($rooms as $r)
                                     <tr>
-                                        <td class="align-content-center">
+                                        <td class="text-center">
                                             @if($r->enabled)
                                                 <div>
-                                                    <span class="sr-only">Yes</span><svg class="m-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+                                                    <span class="visually-hidden">Yes</span><svg class="m-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
                                                 </div>
                                             @endif
                                         </td>
-                                        <td class="align-content-center">
+                                        <td class="text-center">
                                             @if($r->anonymous)
                                                 <div>
-                                                    <span class="sr-only">Yes</span><svg class="m-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+                                                    <span class="visually-hidden">Yes</span><svg class="m-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
                                                 </div>
                                             @endif
                                         </td>
