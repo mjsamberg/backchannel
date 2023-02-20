@@ -23,7 +23,7 @@
             <div class="col-xs-12 col-md-6 mr-md-2 mb-md-0 mb-3">
                 <div class="card">
                     <div class="card-header"><h2 class="mb-0">Current Messages</h2></div>
-                    <div class="card-body p-0" style="height: 30rem; overflow-y: scroll;">
+                    <div class="card-body p-0" id="message-list" style="height: 30rem; overflow-y: scroll;">
                         <ul class="list-group" id="messages">
                             @foreach($room->posts as $index=>$p)
                                 <li class="list-group-item {{ $index%2==1 ? ' bg-dark bg-opacity-10 ' : "" }}">
@@ -52,39 +52,43 @@
 @endsection
 
 @section('scripts')
-    <script language="JavaScript">
+    <script type="module" language="JavaScript">
+        window.onload=function(){
             Echo.channel('room{{ $room->id }}')
-        .listen('MessagePosted', (e) => {
-            var li = document.createElement("li");
-            if ((document.getElementById("messages").childElementCount)%2==1)
-                li.setAttribute('class', 'p-3 bg-gray-100');
-            else
-                li.setAttribute('class', 'p-3');
-            var div_message = document.createElement('div');
-            div_message.setAttribute('class', 'font-serif font-bold text-lg');
-            div_message.appendChild(document.createTextNode(e.message.message));
+            .listen('MessagePosted', (e) => {
+                console.log(e);
+                var li = document.createElement("li");
+                if ((document.getElementById("messages").childElementCount)%2==1)
+                    li.setAttribute('class', 'list-group-item bg-dark bg-opacity-10');
+                else
+                    li.setAttribute('class', 'list-group-item');
+                var div_message = document.createElement('div');
+                div_message.setAttribute('class', 'message-body');
+                div_message.appendChild(document.createTextNode(e.message.message));
 
-            var div_byline = document.createElement('div');
-            div_byline.setAttribute('class', 'text-sm text-gray-700');
-            div_byline.appendChild(document.createTextNode('Posted by '+e.message.name+', '+e.message.posted));
+                var div_byline = document.createElement('div');
+                div_byline.setAttribute('class', 'message-byline');
+                div_byline.appendChild(document.createTextNode('Posted by '+e.message.name+', '+e.message.posted));
 
-            li.appendChild(div_message);
-            li.appendChild(div_byline);
-            document.getElementById("messages").appendChild(li);
-        });
+                li.appendChild(div_message);
+                li.appendChild(div_byline);
+                document.getElementById("messages").appendChild(li);
 
-        var callback = function(){
-            var element = document.getElementById("message-list");
-            element.scrollTop = element.scrollHeight;
-        };
+            });
 
-        if (
-            document.readyState === "complete" ||
-            (document.readyState !== "loading" && !document.documentElement.doScroll)
-        ) {
-            callback();
-        } else {
-            document.addEventListener("DOMContentLoaded", callback);
+            var callback = function(){
+                var element = document.getElementById("message-list");
+                element.scrollTop = element.scrollHeight;
+            };
+
+            if (
+                document.readyState === "complete" ||
+                (document.readyState !== "loading" && !document.documentElement.doScroll)
+            ) {
+                callback();
+            } else {
+                document.addEventListener("DOMContentLoaded", callback);
+            }
         }
     </script>
 @endsection
