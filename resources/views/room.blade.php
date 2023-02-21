@@ -18,7 +18,6 @@
             </ul>
         </div>
     @endif
-
         <div class="row">
             <div class="col-xs-12 col-md-6 mr-md-2 mb-md-0 mb-3">
                 <div class="card">
@@ -28,7 +27,7 @@
                             @foreach($room->posts as $index=>$p)
                                 <li class="list-group-item {{ $index%2==1 ? ' bg-dark bg-opacity-10 ' : "" }}">
                                     <div class="message-body">{{ $p->message }}</div>
-                                    <div class="message-byline">Posted by {{ $p->name }}, {{date("m/d/Y g:i a", strtotime($p->posted))}} </div>
+                                    <div class="message-byline">Posted @if(!$room->anonymous) by {{ $p->name }}, @endif{{date("m/d/Y g:i a", strtotime($p->posted))}} </div>
                                 </li>
                             @endforeach
                         </ul>
@@ -39,7 +38,11 @@
                 <div class="card">
                     <div class="card-header"><h2 class="mb-0">Post New Message</h2></div>
                     <div class="card-body">
-                        <livewire:message-form :room_id="$room->id">
+                        @if ($room->enabled)
+                            <livewire:message-form :room_id="$room->id">
+                        @else
+                            This room is currently closed and cannot accept new messages at this time.
+                        @endif
                     </div>
                 </div>
             </div>
@@ -68,7 +71,11 @@
 
                 var div_byline = document.createElement('div');
                 div_byline.setAttribute('class', 'message-byline');
-                div_byline.appendChild(document.createTextNode('Posted by '+e.message.name+', '+e.message.posted));
+                @if($room->anonymous)
+                    div_byline.appendChild(document.createTextNode('Posted '+e.message.posted));
+                @else
+                    div_byline.appendChild(document.createTextNode('Posted by '+e.message.name+', '+e.message.posted));
+                @endif
 
                 li.appendChild(div_message);
                 li.appendChild(div_byline);

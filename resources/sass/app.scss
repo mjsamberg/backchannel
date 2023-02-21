@@ -1,8 +1,18 @@
 // Fonts
-@import url('https://fonts.bunny.net/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&family=Roboto+Slab:wght@100;300&display=swap');
 
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+
+.message-body{
+    font-weight: bold;
+    font-family: $font-family-serif;
+}
+
+.message-byline{
+    font-size: 0.9rem;
+}
