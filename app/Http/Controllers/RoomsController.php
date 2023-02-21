@@ -43,7 +43,7 @@ class RoomsController extends Controller
 
     public function display_room_form(Request $request){
         $data = $request->validate([
-            'slug' => 'required|alpha_num|max:64',
+            'slug' => 'required|alpha_num|max:64|exists:rooms,slug',
         ]);
         return redirect('/'.$data['slug']);
     }
