@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('home', function () {
+    redirect('/dashboard');
+});
+
 Auth::routes();
 
 Route::post('/room','App\Http\Controllers\RoomsController@display_room_form')->name('home');
