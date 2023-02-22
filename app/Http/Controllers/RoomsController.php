@@ -17,8 +17,6 @@ class RoomsController extends Controller
             'title' => 'required|max:100',
             'slug' => 'required|alpha_num|unique:rooms|max:64',
             'description' => '',
-            'anonymous' => 'boolean',
-            'enabled' => 'boolean'
         ]);
         if(isset($data['enabled'])&&$data['enabled']==1){
             $enabled = true;

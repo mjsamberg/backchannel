@@ -85,7 +85,7 @@
                             </label>
                         </div>
                         <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" name="enabled" id="enabled" checked>
+                            <input class="form-check-input" type="checkbox" name="enabled" id="enabled" value="true" checked>
                             <label class="form-check-label" for="enabled">
                                 Room is Enabled
                             </label>
