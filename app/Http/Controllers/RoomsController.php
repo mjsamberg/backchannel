@@ -20,7 +20,6 @@ class RoomsController extends Controller
             'enabled' => '',
             'anonymous' => '',
         ]);
-        print_r($data);
         if(isset($data['enabled'])){
             $enabled = true;
         }

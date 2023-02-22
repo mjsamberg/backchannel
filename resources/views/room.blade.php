@@ -59,7 +59,6 @@
         window.onload=function(){
             Echo.channel('room{{ $room->id }}')
             .listen('MessagePosted', (e) => {
-                console.log(e);
                 var li = document.createElement("li");
                 if ((document.getElementById("messages").childElementCount)%2==1)
                     li.setAttribute('class', 'list-group-item bg-dark bg-opacity-10');
