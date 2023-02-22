@@ -17,12 +17,15 @@ class RoomsController extends Controller
             'title' => 'required|max:100',
             'slug' => 'required|alpha_num|unique:rooms|max:64',
             'description' => '',
+            'enabled' => '',
+            'anonymous' => '',
         ]);
-        if(isset($data['enabled'])&&$data['enabled']==1){
+        print_r($data);
+        if(isset($data['enabled'])){
             $enabled = true;
         }
         else $enabled = false;
-        if(isset($data['anonymous'])&&$data['anonymous']==1){
+        if(isset($data['anonymous'])){
             $anonymous = true;
         }
         else $anonymous = false;
