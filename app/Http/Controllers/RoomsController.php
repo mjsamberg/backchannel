@@ -38,7 +38,7 @@ class RoomsController extends Controller
         $room->anonymous = $anonymous;
         $room->enabled = $enabled;
         $room->save();
-        return $this->home();
+        return $this->dashboard();
     }
 
     public function display_room_form(Request $request){
