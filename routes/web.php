@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('home', function () {
-    redirect('/dashboard');
+    return redirect('/dashboard');
 });
 
 Auth::routes();
