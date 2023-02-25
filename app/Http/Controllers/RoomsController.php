@@ -41,6 +41,37 @@ class RoomsController extends Controller
         return $this->dashboard();
     }
 
+    public function toggle_enabled($id = null){
+        if($id == null || $id == 0 || empty($id) || !is_numeric($id)){
+            return $this->dashboard();
+        }
+
+        $count = Room::where('user_id', auth()->user()->id)->where('id', $id)->count();
+
+        if($count > 0){
+            $room = Room::where('user_id', auth()->user()->id)->where('id', $id)->first();
+            $room->enabled = !$room->enabled;
+            $room->save();
+        }
+        return $this->dashboard();
+    }
+
+    public function toggle_anonymous($id = null){
+        if($id == null || $id == 0 || empty($id) || !is_numeric($id)){
+            return $this->dashboard();
+        }
+
+        $count = Room::where('user_id', auth()->user()->id)->where('id', $id)->count();
+
+        if($count > 0){
+            $room = Room::where('user_id', auth()->user()->id)->where('id', $id)->first();
+            $room->anonymous = !$room->anonymous;
+            $room->save();
+        }
+        return $this->dashboard();
+    }
+
+
     public function display_room_form(Request $request){
         $data = $request->validate([
             'slug' => 'required|alpha_num|max:64|exists:rooms,slug',

@@ -24,7 +24,7 @@ class MessageForm extends Component
            $data = $this->validate([
                   'message' => 'required',
               ]);
-              $data['name'] = "";
+              $data['name'] = "Anonymous";
        }
        $data['message'] = strip_tags($data['message']);
        $data['room_id'] = $this->room_id;

@@ -36,14 +36,22 @@
                                         <td class="text-center">
                                             @if($r->enabled)
                                                 <div>
-                                                    <span class="visually-hidden">Yes</span><svg class="m-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+                                                   <a href="{{ route('room.enabled', ['id'=>$r->id]) }}"><span class="fa fa-square-check" style="color: green;" title="Enabled"></span></a>
+                                                </div>
+                                            @else
+                                                <div>
+                                                   <a href="{{ route('room.enabled', ['id'=>$r->id]) }}"><span class="fa fa-square-xmark" style="color: red;" title="Disabled"></span></a>
                                                 </div>
                                             @endif
                                         </td>
                                         <td class="text-center">
                                             @if($r->anonymous)
                                                 <div>
-                                                    <span class="visually-hidden">Yes</span><svg class="m-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+                                                    <a href="{{ route('room.anonymous', ['id'=>$r->id]) }}"><span class="fa fa-square-check" style="color: green;" title="Anonymous"></span></a>
+                                                </div>
+                                            @else
+                                                <div>
+                                                   <a href="{{ route('room.anonymous', ['id'=>$r->id]) }}"><span class="fa fa-square-xmark" style="color: red;" title="Not Anonymous"></span></a>
                                                 </div>
                                             @endif
                                         </td>
