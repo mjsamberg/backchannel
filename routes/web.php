@@ -17,6 +17,14 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('about', function () {
+    return view('static.about');
+});
+
+Route::get('terms', function () {
+    return view('static.terms');
+});
+
 Route::get('home', function () {
     return redirect('/dashboard');
 });

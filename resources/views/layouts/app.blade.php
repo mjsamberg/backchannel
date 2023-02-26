@@ -17,7 +17,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -37,19 +37,19 @@
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <li class="nav-item text-white">
+                                    <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <li class="nav-item text-white">
+                                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -75,6 +75,31 @@
         <main class="container py-4">
             @yield('content')
         </main>
+
+        <footer class="bg-primary text-center text-white">
+          <!-- Grid container -->
+          <div class="container p-4">
+            <div class="row">
+                <div class="col"><a class="text-white" href="{{ url('/about') }}">About</a></div>
+                <div class="col"><a class="text-white" href="{{ url('/terms') }}">Privacy Policy</a></div>
+                <div class="col"><a class="text-white" href="https://ko-fi.com/mjsamberg" target="_blank">Donate</a></div>
+            </div>
+
+
+          <div class="container p-4 d-none">
+            <!-- Section: Social media -->
+            <section>
+              <a class="btn btn-outline-light btn-floating m-1" href="https://hachyderm.io/@mjsamberg" role="button"><i class="fab fa-mastodon"></i></a>
+              <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/mjsamberg" role="button"><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-outline-light btn-floating m-1" href="http://www.linkedin.com/in/marksamberg" role="button"><i class="fab fa-linkedin-in"></i></a>
+              <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/mjsamberg" role="button"><i class="fab fa-github"></i></a>
+              <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/mjsamberg" role="button"<i class="fa fa-code-fork"></i></a>
+            </section>
+            <!-- Section: Social media -->
+          </div>
+          <!-- Grid container -->
+          <!-- Copyright -->
+        </footer>
     </div>
     @yield('scripts')
     @livewireScripts
